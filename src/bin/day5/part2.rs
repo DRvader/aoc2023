@@ -106,7 +106,7 @@ fn parse_seed_conversion(i: &str) -> IResult<&str, usize> {
 
     let mut lowest_location = usize::MAX;
 
-    let mut worklist = Vec::new();
+    let mut worklist = Vec::with_capacity(seeds.len());
     for loc in &seeds {
         worklist.push((0, (loc.0, loc.0 + loc.1)));
     }
